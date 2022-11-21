@@ -12,7 +12,11 @@ import { isGitHubUser } from 'utils/typeguards';
 const BASE_URL = 'https://api.github.com/users/';
 
 export const App = () => {
-  const [user, setUser] = useState<LocalGithubUser | null>(defaultUser);
+  const [user, setUser] = useState<LocalGithubUser | null>(() => {
+    const user = window.localStorage.getItem('user');
+    const initialValue: GithubUser = user && JSON.parse(user);
+    return extractLocalUser(initialValue) || defaultUser;
+  });
 
   const fetchUser = async (username: string) => {
     const url = `${BASE_URL}${username}`;
@@ -25,6 +29,8 @@ export const App = () => {
     } else {
       setUser(null);
     }
+
+    window.localStorage.setItem('user', JSON.stringify(user));
   };
 
   return (
