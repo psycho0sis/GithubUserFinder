@@ -1,6 +1,6 @@
-import { Container } from 'components/Container';
-import { Search } from 'components/Search';
-import { TheHeader } from 'components/TheHeader';
+import { Container } from 'components/Container'
+import { Search } from 'components/Search'
+import { TheHeader } from 'components/TheHeader'
 
 export const App = () => {
   return (
@@ -8,5 +8,5 @@ export const App = () => {
       <TheHeader />
       <Search hasError={false} onSubmit={() => {}} />
     </Container>
-  );
-};
+  )
+}
