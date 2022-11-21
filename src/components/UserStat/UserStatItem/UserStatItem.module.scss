@@ -1,0 +1,17 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &Tilte {
+    color: var(--gray-200);
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  &Number {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    font-weight: 700;
+  }
+}
