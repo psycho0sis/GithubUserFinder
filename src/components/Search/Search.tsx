@@ -1,5 +1,3 @@
-import { useRef } from 'react';
-
 import { Button } from 'components/Button';
 import { ReactComponent as IconSearch } from 'assets/icon-search.svg';
 
@@ -10,18 +8,23 @@ interface SearchProps {
   onSubmit: (text: string) => void;
 }
 
-export const Search = ({ hasError, onSubmit }: SearchProps) => {
-  const searchRef = useRef<HTMLInputElement | null>(null);
+type FormField = {
+  username: HTMLInputElement;
+};
 
-  const handleSubmit = (event: React.FormEvent) => {
+export const Search = ({ hasError, onSubmit }: SearchProps) => {
+  const handleSubmit = (
+    event: React.FormEvent<HTMLFormElement & FormField>
+  ) => {
     event.preventDefault();
 
-    const text = searchRef.current?.value || '';
+    const text = event.currentTarget.username.value;
 
     if (text) {
       onSubmit(text);
-      if (searchRef.current) searchRef.current.value = '';
     }
+
+    event.currentTarget.reset();
   };
 
   return (
@@ -34,7 +37,6 @@ export const Search = ({ hasError, onSubmit }: SearchProps) => {
           className={styles.textField}
           id="search"
           name="username"
-          ref={searchRef}
           type="text"
           placeholder="Search GitHub username..."
         />
