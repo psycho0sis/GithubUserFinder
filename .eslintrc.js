@@ -16,7 +16,7 @@ module.exports = {
               // Packages `react` related packages come first.
               ['^react', '^@?\\w'],
               // Internal packages.
-              ['^(@|components|assets|types)(/.*|$)'],
+              ['^(@|components|assets|types|utils|mock)(/.*|$)'],
               // Side effect imports.
               ['^\\u0000'],
               // Parent imports. Put `..` last.
@@ -63,4 +63,4 @@ module.exports = {
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
   },
-}
+};

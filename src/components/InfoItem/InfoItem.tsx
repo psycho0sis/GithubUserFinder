@@ -7,14 +7,14 @@ export interface InfoItemProps {
 }
 
 export const InfoItem = ({ icon, isLink, text }: InfoItemProps) => {
-  const currentText = text || 'Not avaliable';
+  const currentText = text || 'Not available';
   let currentRef = '';
 
   if (isLink) {
     currentRef = text && text.startsWith('http') ? text : `https://${text}`;
   }
   return (
-    <div className={`${styles.infoItem}${text ? '' : `${styles.empty}`}`}>
+    <div className={`${styles.infoItem}${text ? '' : ` ${styles.empty}`}`}>
       {icon}
       <div>
         {isLink && text ? (

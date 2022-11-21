@@ -1,6 +1,5 @@
 export interface LocalGithubUser {
   login: string;
-  id: number;
   avatar: string;
   name: string;
   company: string;
@@ -27,7 +26,7 @@ export interface GithubUser {
   public_repos: number;
   followers: number;
   following: number;
-  created_at: Date;
+  created_at: string;
 }
 
 export interface GithubError {
