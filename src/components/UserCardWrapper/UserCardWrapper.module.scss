@@ -12,7 +12,7 @@
   }
 }
 
-.userCard {
+.userCardWrapperGrid {
   margin: 1.5rem 0 3rem;
   width: 100%;
   padding: 30px 24px 40px;
@@ -42,17 +42,12 @@
   }
 }
 
-.avatar {
-  border-radius: 50%;
-  max-width: 100%;
-}
-
-.bio {
-  font-size: 1rem;
-  line-height: 1.5;
+.userCardWrapperFlex {
+  margin: 1.5rem 0 3rem;
+  width: 100%;
+  padding: 30px 24px 40px;
+  background-color: var(--ucard-bg);
+  box-shadow: var(--ucard-shadow);
+  border-radius: 15px;
   color: var(--bio-color);
-
-  &.empty {
-    opacity: 0.75;
-  }
 }

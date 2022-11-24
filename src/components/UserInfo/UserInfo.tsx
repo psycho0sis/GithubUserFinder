@@ -30,6 +30,7 @@ export const UserInfo = ({ blog, company, location, twitter }: UserInfoProps) =>
       isLink: true,
     },
   ];
+
   return (
     <div className={styles.userInfo}>
       {items.map((item, i) => (
