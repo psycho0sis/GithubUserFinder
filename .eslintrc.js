@@ -16,7 +16,7 @@ module.exports = {
               // Packages `react` related packages come first.
               ['^react', '^@?\\w'],
               // Internal packages.
-              ['^(@|components|assets|constants|types|utils|mock)(/.*|$)'],
+              ['^(@|assets|components|features|constants|types|utils|mock)(/.*|$)'],
               // Side effect imports.
               ['^\\u0000'],
               // Parent imports. Put `..` last.
@@ -43,6 +43,7 @@ module.exports = {
   rules: {
     camelcase: 'error',
     quotes: ['error', 'single'],
+    prefer: 0,
     'comma-dangle': 0,
     '@typescript-eslint/comma-dangle': [
       'error',
