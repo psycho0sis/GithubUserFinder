@@ -7,12 +7,12 @@ import { fetchUser } from './async-user-action';
 
 export interface AsyncUserSlice {
   status: Status;
-  asyncUser: GithubUser | GithubError;
+  asyncUser: GithubUser | GithubError | null;
 }
 
 const initialState: AsyncUserSlice = {
   status: 'idle',
-  asyncUser: {} as GithubUser | GithubError,
+  asyncUser: null,
 };
 
 export const asyncUserSlice = createSlice({

@@ -7,8 +7,10 @@ import { GithubError, GithubUser } from 'types';
 import { Status } from 'types/status';
 import { isGitHubUser } from 'utils/typeguards';
 
-export const useUser = (): [GithubUser | GithubError | null, GithubUser | GithubError, Status] => {
-  const [currentUser, setCurrentUser] = useState<GithubUser | GithubError | null>(null);
+type User = GithubUser | GithubError | null;
+
+export const useUser = (): [User, User, Status] => {
+  const [currentUser, setCurrentUser] = useState<User>(null);
   const asyncUser = useSelector(selectAsyncUser);
   const status = useAppSelector(selectAsyncStatus);
 
